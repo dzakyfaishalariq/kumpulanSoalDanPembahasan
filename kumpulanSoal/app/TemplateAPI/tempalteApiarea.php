@@ -1,12 +1,14 @@
 <?php
+namespace App\TemplateAPI;
 
-class templateApiarea
+class tempalteApiarea
 {
     public function templatePanggil($nama_data, $data)
     {
         $template = [
+            'status' => true,
             'nama_Data' => $nama_data,
-            'data' => $data::orderBy('created_at', 'asc')->get(),
+            'data' => $data,
             'pembuat' => [
                 'nama' => 'Dzaky Faishalariq',
                 'email' => 'dzakyfaishalariq@gmail.com',
@@ -14,5 +16,13 @@ class templateApiarea
             ],
         ];
         return $template;
+    }
+    public function errorApi()
+    {
+        $errorData = [
+            'status' => false,
+            'descripsi' => 'terjadi kesalahan',
+        ];
+        return $errorData;
     }
 }
