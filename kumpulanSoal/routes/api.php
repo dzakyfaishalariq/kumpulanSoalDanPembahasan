@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\JenisSoalController;
+use App\Http\Controllers\KategoriSoalController;
 use App\Http\Controllers\TingkatSoalConttroler;
 use Illuminate\Support\Facades\Route;
 
@@ -24,4 +25,7 @@ Route::controller(TingkatSoalConttroler::class)->group(function () {
 });
 Route::controller(JenisSoalController::class)->group(function () {
     Route::get('/jenisSoal', 'index')->name('jensiSoal');
+});
+Route::controller(KategoriSoalController::class)->group(function () {
+    Route::get('/kategoriSoal', 'index')->name('kategoriSoal');
 });
